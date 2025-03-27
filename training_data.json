@@ -1,0 +1,44 @@
+{
+  "faq": [
+    {
+      "question": "What is the purpose of this website?",
+      "answer": "This website provides information about the rich and diverse culture of India. It includes details on festivals, cuisine, languages, art, dance forms, and more, helping users learn and explore Indian cultural heritage."
+    },
+    {
+      "question": "How can this website benefit me?",
+      "answer": "This website is a valuable resource for anyone interested in learning about Indian culture. It offers insights into various cultural aspects, which can be useful for educational purposes, cultural enrichment, travel planning, or personal interest."
+    },
+    {
+      "question": "Who can use this website?",
+      "answer": "Anyone interested in exploring Indian culture can use this website. Whether you are a student, traveler, researcher, or simply curious about India's traditions and heritage, the site provides relevant and engaging information."
+    },
+    {
+      "question": "Can I find information on specific Indian festivals here?",
+      "answer": "Yes, the website includes information about major Indian festivals, their significance, and how they are celebrated. You can learn about festivals such as Diwali, Holi, Eid, and many others."
+    },
+    {
+      "question": "Are there resources for learning about Indian cuisine on this website?",
+      "answer": "Yes, the website provides an overview of Indian cuisine, including popular dishes, regional specialties, and culinary traditions. It serves as a guide to understanding the diverse food culture of India."
+    },
+    {
+      "question": "Does the website offer any cultural guides or educational materials?",
+      "answer": "The website offers cultural insights and general information about various aspects of Indian culture. While it may not have formal educational materials, it serves as a useful starting point for learning about India's cultural practices and heritage."
+    },
+    {
+      "question": "How often is the content on this website updated?",
+      "answer": "As a static website, the content is updated periodically. For the most current information, check back regularly or refer to the latest updates section if available."
+    },
+    {
+      "question": "Is there a way to provide feedback or suggestions about the website?",
+      "answer": "While the website is static and does not have a feedback form, you can usually find contact information or links to social media channels where you can share your feedback or suggestions with the website administrators."
+    },
+    {
+      "question": "Can I use the information on this website for academic or personal projects?",
+      "answer": "Yes, the information provided on this website can be used for academic research, personal projects, or general knowledge. However, please ensure to cite the website appropriately if required for academic purposes."
+    },
+    {
+      "question": "What should I do if I find incorrect or outdated information on the website?",
+      "answer": "If you encounter incorrect or outdated information, you can usually contact the website administrators using the provided contact details or through social media channels to report the issue and suggest corrections."
+    }
+  ]
+}

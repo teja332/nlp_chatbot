@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="/static/chatbot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Chatbot Interface -->
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header">
+            <div class="chat-header-left">
+                <img src="/static/chatbot_icon.png" alt="Chatbot Avatar">
+                <span><b>AI CHAT BOT</b></span>
+            </div>
+        </div>
+
+        <div class="chat-body" id="chat-body"></div>
+
+        <div class="chat-footer">
+            <textarea id="user-input" placeholder="Type your message here..."></textarea>
+            <img id="send-button" src="/static/send_icon.png" alt="Send" onclick="sendMessage()" style="cursor: pointer;">
+            <img id="stop-button" src="/static/stop_icon.png" alt="Stop" onclick="stopSpeaking()" style="display: none; cursor: pointer;">
+            <img id="voice-icon" class="voice-icon" src="/static/mic_icon.png" alt="Mic Icon">
+        </div>
+
+        <!-- Feedback Message -->
+        <div class="feedback-message" id="feedback-message" style="display: none;">
+            The answer might not be clear. Could you rephrase your question?
+        </div>
+    </div>
+
+    <script src="/static/chatbot.js"></script>
+
+</body>
+</html>

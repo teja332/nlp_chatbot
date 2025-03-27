@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <script>
+        async function sendMessage() {
+            const message = document.getElementById('message').value.trim();
+            if (message) {
+                try {
+                    const response = await fetch('http://localhost:5000/chatbot', {  // Change this URL to match your Flask server URL
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ message }),
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    const data = await response.json();
+                    document.getElementById('response').innerText = data.answer || data.error;
+                } catch (error) {
+                    document.getElementById('response').innerText = 'Error: ' + error.message;
+                }
+            } else {
+                document.getElementById('response').innerText = 'Please enter a message.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <input type="text" id="message" placeholder="Ask me anything">
+    <button onclick="sendMessage()">Send</button>
+    <p id="response"></p>
+</body>
+</html>
