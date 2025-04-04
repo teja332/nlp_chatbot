@@ -3,7 +3,6 @@ let speechSynthesisActive = false;
 let currentLanguage = 'en-US';
 const maxResponseLength = 500;
 
-// Function to stop voice interaction and reset the microphone icon
 function stopVoiceInteraction() {
     if (speechSynthesisActive) {
         window.speechSynthesis.cancel();
@@ -12,34 +11,26 @@ function stopVoiceInteraction() {
     if (listening) {
         recognition.stop();
         listening = false;
-        document.getElementById('voice-icon').src = '/static/mic_icon.png'; // Reset mic icon
+        document.getElementById('voice-icon').src = '/static/mic_icon.png';
     }
-    // Enable user input and voice icon
     toggleInputField(true);
 }
 
-// Function to append messages to chat
 function appendMessage(content, sender) {
-    const truncatedContent = content.length > maxResponseLength
-        ? content.substring(0, maxResponseLength) + '...'
-        : content;
-
+    const truncatedContent = content.length > maxResponseLength ? content.substring(0, maxResponseLength) + '...' : content;
     const messageDiv = document.createElement('div');
     messageDiv.classList.add('message', sender);
     messageDiv.innerText = truncatedContent;
     document.getElementById('chat-body').appendChild(messageDiv);
     document.getElementById('chat-body').scrollTop = document.getElementById('chat-body').scrollHeight;
 
-    // Voice Assistant - Speak the bot's response if sender is bot
     if (sender === 'bot') {
         speak(truncatedContent);
         toggleSendStopButton('showStop');
-        // Disable user input and voice icon while speaking
         toggleInputField(false);
     }
 }
 
-// Function to send user messages
 function sendMessage(userInput = null) {
     const userMessage = userInput || document.getElementById('user-input').value.trim();
     if (!userMessage) return;
@@ -50,18 +41,12 @@ function sendMessage(userInput = null) {
 
     fetch('/chatbot', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMessage }),
     })
     .then(response => response.json())
     .then(data => {
-        if (data.answer) {
-            appendMessage(data.answer, 'bot');
-        } else if (data.error) {
-            appendMessage("Sorry, something went wrong.", 'bot');
-        }
+        appendMessage(data.answer || "Sorry, something went wrong.", 'bot');
     })
     .catch(error => {
         console.error('Error:', error);
@@ -69,10 +54,9 @@ function sendMessage(userInput = null) {
     });
 }
 
-// Function to handle text-to-speech
 function speak(text) {
     if (speechSynthesisActive) {
-        window.speechSynthesis.cancel(); // Stop any ongoing speech synthesis
+        window.speechSynthesis.cancel();
     }
 
     const speech = new SpeechSynthesisUtterance();
@@ -83,16 +67,15 @@ function speak(text) {
     speech.onend = () => {
         speechSynthesisActive = false;
         toggleSendStopButton('showSend');
-        toggleInputField(true); // Enable input after speech ends
+        toggleInputField(true);
     };
 
     window.speechSynthesis.speak(speech);
 }
 
-// Voice Recognition Functionality
 const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
 recognition.lang = currentLanguage;
-recognition.interimResults = true; // Enable interim results for live text updates
+recognition.interimResults = true;
 recognition.continuous = false;
 
 recognition.onresult = function(event) {
@@ -107,16 +90,7 @@ recognition.onresult = function(event) {
         }
     }
 
-    // Update the "Type your message" box with interim results while user speaks
     document.getElementById('user-input').value = finalTranscript + interimTranscript;
-
-    // Send final transcript as message when user stops speaking
-    if (finalTranscript) {
-        sendMessage(finalTranscript);
-        document.getElementById('user-input').value = ''; // Clear input box
-        listening = false;
-        document.getElementById('voice-icon').src = '/static/mic_icon.png';
-    }
 };
 
 recognition.onspeechend = function() {
@@ -128,38 +102,35 @@ recognition.onspeechend = function() {
 };
 
 recognition.onerror = function(event) {
-    console.error('Speech recognition error detected:', event.error);
+    console.error('Speech recognition error:', event.error);
     listening = false;
     document.getElementById('voice-icon').src = '/static/mic_icon.png';
-    appendMessage("Sorry, speech recognition error occurred.", 'bot');
+    appendMessage("Speech recognition error occurred.", 'bot');
 };
 
-// Handle voice icon click for starting/stopping speech recognition
 document.getElementById('voice-icon').addEventListener('click', function() {
     if (listening) {
         recognition.stop();
         listening = false;
-        document.getElementById('voice-icon').src = '/static/mic_icon.png'; // Reset mic icon
-        toggleInputField(true); // Enable input when stopping
+        document.getElementById('voice-icon').src = '/static/mic_icon.png';
+        toggleInputField(true);
     } else {
         if (speechSynthesisActive) {
-            window.speechSynthesis.cancel(); // Stop ongoing speech synthesis if any
+            window.speechSynthesis.cancel();
         }
         appendMessage("Listening...", 'bot');
         recognition.start();
         listening = true;
-        document.getElementById('voice-icon').src = '/static/mic_icon_active.png'; // Change mic icon to show active listening
-        toggleInputField(false); // Disable input while listening
+        document.getElementById('voice-icon').src = '/static/mic_icon_active.png';
+        toggleInputField(false);
     }
 });
 
-// Function to stop speaking when stop button is clicked
 function stopSpeaking() {
     stopVoiceInteraction();
     toggleSendStopButton('showSend');
 }
 
-// Toggle between Send and Stop buttons
 function toggleSendStopButton(action) {
     const sendButton = document.getElementById('send-button');
     const stopButton = document.getElementById('stop-button');
@@ -173,13 +144,10 @@ function toggleSendStopButton(action) {
     }
 }
 
-// Toggle input field's disabled state
 function toggleInputField(isEnabled) {
-    const userInput = document.getElementById('user-input');
-    userInput.disabled = !isEnabled;
+    document.getElementById('user-input').disabled = !isEnabled;
 }
 
-// Handle Enter key for sending messages
 document.getElementById('user-input').addEventListener('keydown', function (e) {
     if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
@@ -187,7 +155,6 @@ document.getElementById('user-input').addEventListener('keydown', function (e) {
     }
 });
 
-// Focus on user input on page load
 window.onload = function() {
     document.getElementById('user-input').focus();
 };

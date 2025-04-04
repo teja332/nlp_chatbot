@@ -1,0 +1,82 @@
+{
+  "faq": [
+    {"question": "hi", "answer": "Hello! How can I assist you today?"},
+    {"question": "hello", "answer": "Hi there! What can I do for you?"},
+    {"question": "hey", "answer": "Hey! How's your day going?"},
+    {"question": "good morning", "answer": "Good morning! Hope you have a great day ahead!"},
+    {"question": "good afternoon", "answer": "Good afternoon! How can I help you?"},
+    {"question": "good evening", "answer": "Good evening! What brings you here today?"},
+    {"question": "how are you", "answer": "I'm just a bot, but I'm doing great! Thanks for asking."},
+    {"question": "what's up", "answer": "Not much! Just here to help you out."},
+    {"question": "who are you", "answer": "I am your AI chatbot assistant."},
+    {"question": "what can you do", "answer": "I can chat with you, answer questions, and assist you with basic knowledge."},
+    
+    {"question": "what is your name", "answer": "I am your AI chatbot! You can call me ChatBot."},
+    {"question": "where are you from", "answer": "I live in the digital world!"},
+    {"question": "do you have a favorite color", "answer": "I like all colors equally!"},
+    {"question": "do you eat food", "answer": "I don't eat, but I can talk about food all day!"},
+    {"question": "what's your favorite movie", "answer": "I don't watch movies, but I can recommend some!"},
+    {"question": "can you tell me a joke", "answer": "Sure! Why don't programmers like nature? It has too many bugs!"},
+    {"question": "tell me another joke", "answer": "Why did the scarecrow win an award? Because he was outstanding in his field!"},
+    
+    {"question": "can you help me", "answer": "Of course! What do you need help with?"},
+    {"question": "what is 2 + 2", "answer": "2 + 2 is 4."},
+    {"question": "what is the capital of france", "answer": "The capital of France is Paris."},
+    {"question": "who wrote harry potter", "answer": "J.K. Rowling wrote the Harry Potter series."},
+    {"question": "who was the first man on the moon", "answer": "Neil Armstrong was the first man to walk on the Moon in 1969."},
+    
+    {"question": "what is the largest planet", "answer": "The largest planet in our solar system is Jupiter."},
+    {"question": "how does gravity work", "answer": "Gravity is a force that pulls objects towards each other."},
+    {"question": "what is a black hole", "answer": "A black hole is a region in space with gravity so strong that nothing can escape it."},
+    {"question": "what is the boiling point of water", "answer": "The boiling point of water is 100°C (212°F) at sea level."},
+    
+    {"question": "do you like music", "answer": "I don't have ears, but I know a lot about music! What do you like?"},
+    {"question": "can you sing", "answer": "I can't sing, but I can find lyrics for you!"},
+    {"question": "who is the president of the usa", "answer": "You can check online for the latest update on that."},
+    {"question": "what is the speed of light", "answer": "The speed of light is approximately 299,792,458 meters per second."},
+    
+    {"question": "what is your favorite sport", "answer": "I don't play sports, but I can tell you about different sports!"},
+    {"question": "who won the last world cup", "answer": "You can check online for the latest sports updates."},
+    
+    {"question": "who invented the telephone", "answer": "Alexander Graham Bell invented the telephone."},
+    {"question": "who discovered electricity", "answer": "Benjamin Franklin is credited with discovering electricity."},
+    {"question": "what is the smallest country", "answer": "The smallest country in the world is Vatican City."},
+    
+    {"question": "what is your favorite food", "answer": "I don't eat, but I can recommend some great dishes!"},
+    {"question": "can you recommend a book", "answer": "Sure! What genre do you like?"},
+    
+    {"question": "what is the longest river", "answer": "The Nile is the longest river in the world."},
+    {"question": "what is the tallest building in the world", "answer": "As of now, the Burj Khalifa in Dubai is the tallest building."},
+    {"question": "who is the richest person in the world", "answer": "You can check online for the latest rankings on the richest people."},
+    
+    {"question": "do you have emotions", "answer": "I don't have emotions, but I can try to understand yours!"},
+    {"question": "can you think", "answer": "I don't think like humans, but I can process information!"},
+    
+    {"question": "do you have friends", "answer": "Everyone who chats with me is my friend!"},
+    {"question": "can you learn new things", "answer": "Yes, but only when my creator updates my knowledge!"},
+    
+    {"question": "how do computers work", "answer": "Computers process information using a combination of hardware and software."},
+    {"question": "what is artificial intelligence", "answer": "Artificial intelligence is the simulation of human intelligence in machines."},
+    
+    {"question": "do you have a job", "answer": "My job is to assist you with your questions!"},
+    {"question": "are you human", "answer": "No, I am an AI chatbot."},
+    
+    {"question": "can you do math", "answer": "Yes! Ask me a math question."},
+    {"question": "what is pi", "answer": "Pi is approximately 3.14159 and is the ratio of a circle's circumference to its diameter."},
+    
+    {"question": "can you tell a story", "answer": "Sure! Once upon a time, there was a curious human who loved chatting with AI..."},
+    
+    {"question": "what is the meaning of life", "answer": "The meaning of life is different for everyone! What do you think?"},
+    {"question": "can you speak other languages", "answer": "I mainly respond in English, but I can recognize some words in other languages."},
+    
+    {"question": "how can I improve my English", "answer": "Practice reading, writing, and speaking daily! Watching movies with subtitles helps too."},
+    
+    {"question": "what happens when you die", "answer": "That's a deep question! Many people have different beliefs about what happens after death."},
+    
+    {"question": "do you believe in aliens", "answer": "I don't have beliefs, but many scientists think life could exist beyond Earth."},
+    
+    {"question": "can you write a poem", "answer": "Sure! Here's a short one: Roses are red, violets are blue, I'm a chatbot, here for you!"},
+    
+    {"question": "can you play games", "answer": "I can't play games, but I can suggest some fun ones!"}
+  ]
+}
